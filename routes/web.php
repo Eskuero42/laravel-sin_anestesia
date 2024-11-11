@@ -24,10 +24,6 @@ Route::get('/', function () {
     return view('frontend.principal');
 });
 
-/*Route::get('/admin/dashboard', function () {
-    return view('backend.principal');
-});*/
-
 Route::get('/admin/dashboard',
     [AdminController::class, 'AdminDashboard'])
     ->name('admin.dashboard');

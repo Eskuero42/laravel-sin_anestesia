@@ -117,7 +117,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title mb-0">Add, Edit & Remove</h4>
+                            <h4 class="card-title mb-0">Lista de personas registradas</h4>
                         </div><!-- end card header -->
 
                         <div class="card-body">
@@ -125,8 +125,8 @@
                                 <div class="row g-4 mb-3">
                                     <div class="col-sm-auto">
                                         <div>
-                                            <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> Add</button>
-                                            <button class="btn btn-soft-danger" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
+                                            <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal"><i class="ri--line align-bottom me-1"></i>Registrar nueva persona</button>
+                                            <button class="btn btn-soft-danger" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line">Eliminar</i></button>
                                         </div>
                                     </div>
                                     <div class="col-sm">
@@ -148,16 +148,17 @@
                                                         <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                                                     </div>
                                                 </th>
-                                                <th class="sort" data-sort="customer_name">C.I.</th>
-                                                <th class="sort" data-sort="customer_name">Nombres</th>
-                                                <th class="sort" data-sort="customer_name">Apellido Paterno</th>
-                                                <th class="sort" data-sort="customer_name">Apellido Materno</th>
-                                                <th class="sort" data-sort="email">Correo</th>
-                                                <th class="sort" data-sort="date">Fecha de nacimiento</th>
-                                                <th class="sort" data-sort="customer_name">Domicilio</th>
-                                                <th class="sort" data-sort="phone">Teléfono</th>
-                                                <th class="sort" data-sort="phone">celular</th>
-                                                <th class="sort" data-sort="action">Action</th>
+                                                <th class="" data-sort="customer_name">C.I.</th>
+                                                <th class="" data-sort="customer_name">Nombres</th>
+                                                <th class="" data-sort="customer_name">Apellido Paterno</th>
+                                                <th class="" data-sort="customer_name">Apellido Materno</th>
+                                                <th class="" data-sort="email">Correo</th>
+                                                <th class="" data-sort="date">Fecha de nacimiento</th>
+                                                <th class="" data-sort="customer_name">Domicilio</th>
+                                                <th class="" data-sort="phone">Teléfono</th>
+                                                <th class="" data-sort="phone">celular</th>
+                                                <th class="" data-sort="action">Acciones de Persona</th>
+                                                <!-- sort -->
                                             </tr>
                                         </thead>
                                         <tbody class="list form-check-all">
@@ -178,8 +179,8 @@
                                                     <td>{{ $persona->telefono }}</td>
                                                     <td>{{ $persona->celular }}</td>
                                                     <td>
-                                                        <!-- Editar -->
-                                                        <a type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" 
+                                                        <a type="button" class="btn btn-success add-btn" ><i href=""></i>Ver</a>
+                                                        <a type="button" class="btn btn-warning add-btn" data-bs-toggle="modal" id="create-btn" 
                                                         data-bs-target="#showModal1"><i href="{{ route('personas.editar', $persona->id) }}"></i>Editar</a>
                                                         
                                                         <!-- Eliminar -->
@@ -188,6 +189,7 @@
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este registro?')">Eliminar</button>
                                                         </form>
+                                                        <a type="button" class="btn btn-secondary add-btn" ><i href=""></i>Ver</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -237,7 +239,7 @@
                                     <!-- Campo Carnet -->
                                     <div class="col-md-6 mb-3">
                                         <label for="carnet" class="form-label">Carnet</label>
-                                        <input type="text" name="carnet" class="form-control" placeholder="Carnet" required />
+                                        <input type="text" name="carnet" class="form-control" placeholder="Ingrese N° de carnet" required />
                                     </div>
                         
                                     <div class="col-md-6 mb-3">
@@ -248,9 +250,9 @@
                         
                                 <div class="row">
                                     <!-- Campo Nombres -->
-                                    <div class="col-md-12 mb-6">
+                                    <div class="col-md-12 mb-3">
                                         <label for="nombres" class="form-label">Nombres</label>
-                                        <input type="text" name="nombres" class="form-control" placeholder="Nombres" required />
+                                        <input type="text" name="nombres" class="form-control" placeholder="Ingrese nombres" required />
                                     </div>
                                 </div>
 
@@ -258,13 +260,13 @@
                                     <!-- Campo Apellido Paterno -->
                                     <div class="col-md-6 mb-3">
                                         <label for="apellido_paterno" class="form-label">Apellido Paterno</label>
-                                        <input type="text" name="apellido_paterno" class="form-control" placeholder="Apellido Paterno" required />
+                                        <input type="text" name="apellido_paterno" class="form-control " placeholder="Ingrese apellido paterno" required />
                                     </div>
                         
                                     <!-- Campo Apellido Materno -->
                                     <div class="col-md-6 mb-3">
                                         <label for="apellido_materno" class="form-label">Apellido Materno</label>
-                                        <input type="text" name="apellido_materno" class="form-control" placeholder="Apellido Materno" required />
+                                        <input type="text" name="apellido_materno" class="form-control" placeholder="Ingrese apellido materno" required />
                                     </div>
                                 </div>
                         
@@ -272,7 +274,7 @@
                                     <!-- Campo Correo -->
                                     <div class="col-md-12 mb-6">
                                         <label for="correo" class="form-label">Correo</label>
-                                        <input type="email" name="correo" class="form-control" placeholder="Correo" required />
+                                        <input type="email" name="correo" class="form-control" placeholder="Ingrese orreo" required />
                                     </div>
                                 </div>
                         
@@ -280,20 +282,20 @@
                                     <!-- Campo Teléfono -->
                                     <div class="col-md-6 mb-3">
                                         <label for="telefono" class="form-label">Teléfono</label>
-                                        <input type="text" name="telefono" class="form-control" placeholder="Teléfono" required />
+                                        <input type="number" name="telefono" class="form-control" placeholder="Ingrese teléfono"/>
                                     </div>
 
                                     <!-- Campo Celular -->
                                     <div class="col-md-6 mb-3">
                                         <label for="celular" class="form-label">Celular</label>
-                                        <input type="text" name="celular" class="form-control" placeholder="Celular" required />
+                                        <input type="number" name="celular" class="form-control" placeholder="Ingrese celular" required />
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12 mb-6">
                                         <label for="domicilio" class="form-label">Domicilio</label>
-                                        <input type="text" name="domicilio" class="form-control" placeholder="Domicilio" required />
+                                        <input type="text" name="domicilio" class="form-control" placeholder="Ingrese domicilio"/>
                                     </div>
                                 </div>
                             </div>
@@ -320,7 +322,7 @@
                             <div class="modal-body" style="min-height: 500px; max-width: 800px;">
                                 <div class="row">
                                     <!-- Campo Carnet -->
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-6 mb-6">
                                         <label for="carnet" class="form-label">Carnet</label>
                                         <input type="text" name="carnet" class="form-control" value="{{ old('carnet', $persona->carnet) }}" placeholder="Carnet" required />
                                     </div>
@@ -333,7 +335,7 @@
             
                                 <div class="row">
                                     <!-- Campo Nombres -->
-                                    <div class="col-md-12 mb-6">
+                                    <div class="col-md-12 mb-3">
                                         <label for="nombres" class="form-label">Nombres</label>
                                         <input type="text" name="nombres" class="form-control" value="{{ old('nombres', $persona->nombres) }}" placeholder="Nombres" required />
                                     </div>
@@ -355,7 +357,7 @@
             
                                 <div class="row">
                                     <!-- Campo Correo -->
-                                    <div class="col-md-12 mb-6">
+                                    <div class="col-md-12 mb-3">
                                         <label for="correo" class="form-label">Correo</label>
                                         <input type="email" name="correo" class="form-control" value="{{ old('correo', $persona->correo) }}" placeholder="Correo" required />
                                     </div>
@@ -376,7 +378,7 @@
                                 </div>
             
                                 <div class="row">
-                                    <div class="col-md-12 mb-6">
+                                    <div class="col-md-12 mb-3">
                                         <label for="domicilio" class="form-label">Domicilio</label>
                                         <input type="text" name="domicilio" class="form-control" value="{{ old('domicilio', $persona->domicilio) }}" placeholder="Domicilio" required />
                                     </div>
