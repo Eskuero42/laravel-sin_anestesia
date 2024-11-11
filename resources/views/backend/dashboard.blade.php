@@ -226,7 +226,7 @@
             <!-- end row -->
             <!--MODAL ADD-->
             <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content">
                         <div class="modal-header bg-light p-3">
                             <h5 class="modal-title" id="exampleModalLabel"></h5>
@@ -234,7 +234,7 @@
                         </div>
                         <form action="{{ route('personas.guardar') }}" method="POST">
                             @csrf
-                            <div class="modal-body" style="min-height: 500px; max-width: 800px;">
+                            <div class="modal-body">
                                 <div class="row">
                                     <!-- Campo Carnet -->
                                     <div class="col-md-6 mb-3">
@@ -310,7 +310,7 @@
             </div>
 
             <div class="modal fade" id="showModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content">
                         <div class="modal-header bg-light p-3">
                             <h5 class="modal-title" id="exampleModalLabel">Editar Persona</h5>
@@ -319,7 +319,7 @@
                         <form action="{{ route('personas.actualizar', $persona->id) }}" method="POST">
                             @csrf
                             @method('PUT') <!-- Método PUT para actualización -->
-                            <div class="modal-body" style="min-height: 500px; max-width: 800px;">
+                            <div class="modal-body">
                                 <div class="row">
                                     <!-- Campo Carnet -->
                                     <div class="col-md-6 mb-6">
@@ -386,7 +386,7 @@
                             </div>
             
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                                 <button type="submit" class="btn btn-success">Actualizar</button>
                             </div>
                         </form>
