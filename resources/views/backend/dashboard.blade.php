@@ -181,15 +181,15 @@
                                                     <td>
                                                         <a type="button" class="btn btn-success add-btn" ><i href=""></i>Ver</a>
                                                         <a type="button" class="btn btn-warning add-btn" data-bs-toggle="modal" id="create-btn" 
-                                                        data-bs-target="#showModal1"><i href="{{ route('personas.editar', $persona->id) }}"></i>Editar</a>
+                                                        data-bs-target="#showModal1"><i href="{{ route('admin.editar', $persona->id) }}"></i>Editar</a>
                                                         
                                                         <!-- Eliminar -->
-                                                        <form action="{{ route('personas.eliminar', $persona->id) }}" method="POST" style="display:inline;">
+                                                        <form action="{{ route('admin.eliminar', $persona->id) }}" method="POST" style="display:inline;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este registro?')">Eliminar</button>
                                                         </form>
-                                                        <a type="button" class="btn btn-secondary add-btn" ><i href=""></i>Ver</a>
+                                                        <a type="button" class="btn btn-secondary add-btn" ><i href=""></i>Cargo</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -232,7 +232,7 @@
                             <h5 class="modal-title" id="exampleModalLabel"></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                         </div>
-                        <form action="{{ route('personas.guardar') }}" method="POST">
+                        <form action="{{ route('admin.guardar') }}" method="POST">
                             @csrf
                             <div class="modal-body">
                                 <div class="row">
@@ -316,7 +316,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">Editar Persona</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                         </div>
-                        <form action="{{ route('personas.actualizar', $persona->id) }}" method="POST">
+                        <form action="{{ route('admin.actualizar', $persona->id) }}" method="POST">
                             @csrf
                             @method('PUT') <!-- Método PUT para actualización -->
                             <div class="modal-body">
