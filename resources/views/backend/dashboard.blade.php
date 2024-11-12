@@ -189,7 +189,8 @@
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este registro?')">Eliminar</button>
                                                         </form>
-                                                        <a type="button" class="btn btn-secondary add-btn" ><i href=""></i>Cargo</a>
+                                                        <a type="button" class="btn btn-secondary add-btn" data-bs-toggle="modal" id="create-btn" 
+                                                        data-bs-target="#showModal2"><i href=""></i>Crear cuenta</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -393,6 +394,91 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="showModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header bg-light p-3">
+                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
+                        </div>
+                        <form action="{{ route('admin.guardar') }}" method="POST">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Campo Carnet -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="carnet" class="form-label">Carnet</label>
+                                        <input type="text" name="carnet" class="form-control" placeholder="Ingrese N° de carnet" required />
+                                    </div>
+                        
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                        <input type="date" name="fecha_nacimiento" class="form-control" required />
+                                    </div>
+                                </div>
+                        
+                                <div class="row">
+                                    <!-- Campo Nombres -->
+                                    <div class="col-md-12 mb-3">
+                                        <label for="nombres" class="form-label">Nombres</label>
+                                        <input type="text" name="nombres" class="form-control" placeholder="Ingrese nombres" required />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <!-- Campo Apellido Paterno -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="apellido_paterno" class="form-label">Apellido Paterno</label>
+                                        <input type="text" name="apellido_paterno" class="form-control " placeholder="Ingrese apellido paterno" required />
+                                    </div>
+                        
+                                    <!-- Campo Apellido Materno -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="apellido_materno" class="form-label">Apellido Materno</label>
+                                        <input type="text" name="apellido_materno" class="form-control" placeholder="Ingrese apellido materno" required />
+                                    </div>
+                                </div>
+                        
+                                <div class="row">
+                                    <!-- Campo Correo -->
+                                    <div class="col-md-12 mb-6">
+                                        <label for="correo" class="form-label">Correo</label>
+                                        <input type="email" name="correo" class="form-control" placeholder="Ingrese orreo" required />
+                                    </div>
+                                </div>
+                        
+                                <div class="row"> 
+                                    <!-- Campo Teléfono -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="telefono" class="form-label">Teléfono</label>
+                                        <input type="number" name="telefono" class="form-control" placeholder="Ingrese teléfono"/>
+                                    </div>
+
+                                    <!-- Campo Celular -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="celular" class="form-label">Celular</label>
+                                        <input type="number" name="celular" class="form-control" placeholder="Ingrese celular" required />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb-6">
+                                        <label for="domicilio" class="form-label">Domicilio</label>
+                                        <input type="text" name="domicilio" class="form-control" placeholder="Ingrese domicilio"/>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-success">Guardar</button>
+                            </div>
+                        </form>                     
+                    </div>
+                </div>
+            </div>
+            
             
             <!--MODAL EDIT-->
             <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
