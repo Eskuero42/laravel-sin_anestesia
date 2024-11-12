@@ -67,7 +67,7 @@ class PersonasController extends Controller
 
         return redirect()->route('admin.dashboard');
     }
-    public function actualizarPersona(Request $request, $id)
+    public function ActualizarPersona(Request $request, $id)
     {
         // Validar los datos
         $validated = $request->validate([

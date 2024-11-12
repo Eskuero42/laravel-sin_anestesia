@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
 Route::post('/personas/guardar', [PersonasController::class, 'PersonasGuardar'])->name('personas.guardar');
 Route::get('/personas/{id}/editar', [PersonasController::class, 'PersonasEditar'])->name('personas.editar');
 Route::delete('/personas/{id}/eliminar', [PersonasController::class, 'PersonasEliminar'])->name('personas.eliminar');
-Route::put('personas/{id}/actualizar', [PersonasController::class, 'actualizarPersona'])->name('personas.actualizar');
+Route::put('personas/{id}/actualizar', [PersonasController::class, 'ActualizarPersona'])->name('personas.actualizar');
 
 
 require __DIR__.'/auth.php';
